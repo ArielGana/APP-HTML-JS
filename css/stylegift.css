@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF0F5;
+}
+nav {
+    background-color: #DCDCDCDC;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #d8d7d7;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.gift-list, .cart {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.gift-info {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 10px 0;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+button {
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.message {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+     margin-top: 20px;
+}
+
+.message p {
+    font-size: 16px;
+    margin: 0;
+    color: #666;
+}
+    
+.user-dropdown:hover .dropdown-list {
+    display: block;
+}
+        
+.dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #DCDCDCDC;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 4px #555;
+}
+.dropdown-list:hover {
+    background-color: #d8d7d7;
+}
+.dropdown-list li {
+    padding: 10px;
+}
+#linkGift {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #3498db; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Efecto de transición al pasar el ratón */
+}
+
+#linkGift:hover {
+    background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón */
+}
+#register{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #3498db; /* Color de fondo del enlace */
+    color: #fff; /* Color del texto del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Efecto de transición al pasar el ratón */
+}
+
+#register:hover {
+    background-color: #2980b9; /* Cambia el color de fondo al pasar el ratón */
+}
+@media (max-device-width: 750px) {
+    header {
+        font-size: 24px;
+        /* Ajusta el tamaño del título para dispositivos móviles */
+        letter-spacing: 5px;
+        /* Ajusta el espaciado de las letras para dispositivos móviles */
+        background-size: 120% 100%;
+
+    }
+
+    #inicio {
+        margin-top: 100%;
+    }
+
+    #collage {
+        margin-left: 0px;
+        margin-right: 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 10px;
+    }
+
+    #collage img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+
+    nav {
+        height: 100px;
+        width: 100%;
+        transform: scale(1);
+
+    }
+
+    nav ul li a {
+        font-size: 40px;
+    }
+    .fixed-nav {
+    position: fixed;
+    top: 0;
+    height: 230px;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #dcdcdc;
+    /* Agrega cualquier estilo adicional que desees cuando el nav está fijo */
+}
+
+}
+@media (max-device-width: 1280px) {
+
+    #collage img {
+        width: 200px;
+        height: 250px;
+        border-radius: 8px;
+    }
+    #collage {
+        margin-left: 100px;
+        margin-right: 100px;
+
+    }
+    
+}

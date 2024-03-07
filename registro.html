@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleregistro.css"> <!-- Enlace al archivo CSS -->
+    <title>Registro de Usuario</title>
+
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Registro de Usuario</h2>
+        <form id="registerForm" action="https://bodaivancarolina.000webhostapp.com/files/register_user.php"
+            method="post">
+            <div class="form-group">
+                <label for="rut">RUT:</label>
+                <input type="text" id="rut" name="rut" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <div class="form-group">
+                <label>Asistiré:</label>
+                <label><input type="radio" name="asistira" value="si" required checked> Sí</label>
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+    <div class="modal" id="myModal" style="display: none;">
+        <div class="modal-content">
+
+            <p id="modalMessage"></p>
+        </div>
+   
+    </div>
+<script src="./js/scriptregister.js"></script>
+
+</body>
+
+</html>

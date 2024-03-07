@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Boda de [NOMBRE NOVIO] y [NOMBRE NOVIA]</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace al archivo CSS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1>Boda de nombre hombre y nombre mujer</h1>
+        <p>17/02/2024 - San javier</p>
+        <div id="contador">Cargando contador...</div>
+    </header>
+ <script>
+        // Fecha objetivo: 17 de febrero de 2024
+        const fechaObjetivo = new Date("2024-02-17T00:00:00Z").getTime();
+
+        // Actualiza el contador cada segundo
+        const intervalo = setInterval(function () {
+            const ahora = new Date().getTime();
+            const tiempoRestante = fechaObjetivo - ahora;
+
+            // Calcula días, horas, minutos y segundos
+            const dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
+
+            // Muestra el contador en la página
+            const contadorElemento = document.getElementById("contador");
+            contadorElemento.innerHTML = `Faltan ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos`;
+
+            // Cuando el tiempo se acaba, muestra un mensaje y detén el intervalo
+            if (tiempoRestante <= 0) {
+                clearInterval(intervalo);
+                contadorElemento.innerHTML = "¡Tiempo alcanzado!";
+            }
+        }, 1000);
+    </script>
+    <nav>
+        <ul>
+            <li><a href="index.html">Información</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="videos.html">Videos</a></li> <!-- Agrega el enlace para Videos -->
+            <li><a href="regalos.html">Lista de Regalos</a></li>
+            <li id="user-link-li" class="user-dropdown">
+                <a id="user-link" href="user.html"><i class="fas fa-user"></i> Usuario</a>
+                <ul class="dropdown-list">
+                    <li><a id="login-link" href="ingreso.html">Ingresar</a></li>
+                    <li><a id="logout-link" href="https://bodaivancarolina.000webhostapp.com/files/cerrar_sesion.php" style="display: none;">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        $(document).ready(function() {
+            // Realizar una solicitud AJAX para verificar la sesión
+            $.getJSON('https://bodaivancarolina.000webhostapp.com/files/verificar_sesion.php', function(data) {
+                if (data.authenticated) {
+                    // Usuario autenticado, mostrar enlace de cerrar sesión y ocultar enlace de inicio de sesión
+                    $('#login-link').hide();
+                    $('#logout-link').show();
+        
+                    // Redireccionar al hacer clic en el enlace de usuario
+                    $('#user-link').click(function() {
+                        // Aquí puedes redirigir a la página de perfil del usuario
+                        window.location.href = 'perfil.html'; // Cambia a la página de perfil del usuario
+                    });
+                } else {
+                    // Usuario no autenticado, mostrar enlace de inicio de sesión y ocultar enlace de cerrar sesión
+                    $('#login-link').show();
+                    $('#logout-link').hide();
+        
+                    // Redireccionar al hacer clic en el enlace de usuario
+                    $('#user-link').click(function() {
+                        // Aquí puedes redirigir a la página de inicio de sesión
+                        window.location.href = 'ingreso.html'; // Redirige a la página de inicio de sesión
+                    });
+                }
+            });
+        });
+    </script>
+    <main>
+        <!-- Aquí puedes incluir la información de la boda -->
+        <section id="informacion">
+            <h2>Información de la Boda</h2>
+            <p>¡Celebremos el amor en el encantador entorno de San Javier, una comuna pintoresca ubicada en la hermosa
+                región del Maule en Chile! Te invitamos a ser parte de un día lleno de emociones, risas y momentos
+                inolvidables mientras [Nombres de los Novios] unen sus vidas en sagrado matrimonio.
+                La ceremonia tendrá lugar en [Nombre del Lugar de la Ceremonia], un rincón lleno de historia y belleza
+                natural. Con las majestuosas montañas como telón de fondo y la suave brisa que acaricia el lugar, el
+                ambiente será simplemente mágico. Los novios intercambiarán sus votos rodeados de familiares y amigos
+                que han sido testigos de su amor desde sus comienzos.
+                Después de la emotiva ceremonia, todos nos dirigiremos a [Nombre del Lugar de la Recepción], donde la
+                celebración continuará en grande. El lugar estará decorado con detalles que reflejan la personalidad de
+                los novios y su amor por la naturaleza y la tradición chilena. La música en vivo y el baile llenarán el
+                ambiente de alegría y felicidad mientras todos disfrutan de deliciosos platillos típicos de la región y
+                brindan con vinos locales de alta calidad.
+                Los momentos especiales no faltarán: desde el primer baile como esposos hasta los discursos emotivos de
+                amigos cercanos y familiares. Habrá un rincón de fotografías donde podrás capturar tus propios recuerdos
+                y dejar mensajes cariñosos para los recién casados.
+                No podemos esperar para compartir este día tan significativo con todos ustedes. Su presencia será el
+                regalo más grande que [Nombres de los Novios] puedan recibir, y juntos crearemos memorias que perdurarán
+                por siempre. ¡Únete a nosotros en esta celebración de amor y unidad en San Javier!</p>
+        </section>
+
+        <!-- Aquí puedes incluir una galería de fotos -->
+        <section id="galeria">
+            <h2>Galería de Fotos</h2>
+            <div class="galeria-container">
+                <div class="imagenes"></div>
+                <div class="flechas">
+                    <button class="flecha flecha-izquierda">◄ Anterior</button>
+                    <button class="flecha flecha-derecha">Siguiente ►</button>
+                </div>
+            </div>
+        </section>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var galeriaContainer = document.querySelector(".imagenes");
+                var flechaIzquierda = document.querySelector(".flecha-izquierda");
+                var flechaDerecha = document.querySelector(".flecha-derecha");
+    
+                var imagenes = []; // Aquí almacenaremos las rutas de las imágenes
+                var indiceActual = 0;
+    
+                // Define la ruta de la carpeta de imágenes
+                var folderPath = 'public_html/img'; // Ajusta la ruta según sea necesario
+    
+                function cargarImagenes() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'https://bodaivancarolina.000webhostapp.com/files/get_img.php?carpeta=' + encodeURIComponent(folderPath), true);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            imagenes = JSON.parse(xhr.responseText);
+                            mostrarImagenes();
+                        }
+                    };
+                    xhr.send();
+                }
+    
+                function mostrarImagenes() {
+                    galeriaContainer.innerHTML = "";
+                    var imgElement = document.createElement('img');
+                    imgElement.src = imagenes[indiceActual];
+                    galeriaContainer.appendChild(imgElement);
+    
+                    galeriaContainer.classList.add("mostrando"); // Agrega la clase para mostrar con animación
+                }
+    
+                flechaIzquierda.addEventListener("click", function () {
+                    indiceActual = Math.max(indiceActual - 1, 0);
+                    mostrarImagenes();
+                });
+    
+                flechaDerecha.addEventListener("click", function () {
+                    indiceActual = Math.min(indiceActual + 1, imagenes.length - 1);
+                    mostrarImagenes();
+                });
+    
+                cargarImagenes();
+    
+                // Función para cambiar de imagen automáticamente
+                function cambiarImagenAutomaticamente() {
+                    indiceActual = (indiceActual + 1) % imagenes.length;
+                    mostrarImagenes();
+                }
+    
+                // Cambiar imagen cada 3 segundos (3000 ms)
+                setInterval(cambiarImagenAutomaticamente, 3000);
+            });
+        </script>
+        
+
+        <section>
+            <h2>Ubicacion</h2>
+            <div>Teatro San Javier
+                <div id="ubicacion"></div>
+
+            </div>
+        </section>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZXN0ZXNlY2giLCJhIjoiY2xncmY2a2lkMDBwNTNscHByemRiNjAxbCJ9.zgJDh1eGwLI6Ov5SCmHP7A';
+            var map = new mapboxgl.Map({
+                container: 'ubicacion', // Aquí especifica el ID del elemento contenedor
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [-71.732, -35.594],
+                zoom: 15,
+                width: '100%', // Ajusta el ancho del mapa
+                height: '100%', // Ajusta la altura del mapa
+            });
+            var marker = new mapboxgl.Marker()
+                .setLngLat([-71.73224522481283, -35.5950866276406])
+                .addTo(map);
+        </script>
+
+
+    </main>
+
+    <footer>
+        <!-- Agrega cualquier información adicional que desees, como enlaces a redes sociales, datos de contacto, etc. -->
+        <p>Contacto: [CORREO ELECTRÓNICO] - Teléfono: [TELÉFONO]</p>
+    </footer>
+
+</body>
+
+</html>

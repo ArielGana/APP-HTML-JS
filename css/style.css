@@ -1,0 +1,440 @@
+        /* Estilos generales */
+        @font-face {
+            font-family: 'vibes';
+            /* Puedes asignarle el nombre que quieras */
+            src: url('../Fuentes/GreatVibes-Regular.ttf') format('truetype');
+            /* Ruta de tu archivo .ttf */
+        }
+
+        @font-face {
+            font-family: 'tas';
+            /* Puedes asignarle el nombre que quieras */
+            src: url('../Fuentes/EduTASBeginner-VariableFont_wght.ttf') format('truetype');
+            /* Ruta de tu archivo .ttf */
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF0F5;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            background: url('../imgNovios/23853965-3521-4b23-b51a-b79ed7825ed9.jpg') center/cover no-repeat;
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+            letter-spacing: 10px;
+
+        }
+
+        #inicio {
+            margin-top: 20%;
+        }
+
+        .dorado {
+            position: relative;
+            display: inline-block;
+            /* Color gradient */
+            background: linear-gradient(to right,
+                    #ffcc66 0,
+                    #ffcc00 20%,
+                    #ffdb58 40%,
+                    #ffeb99 50%,
+                    #ffdb58 60%,
+                    #ffcc00 80%,
+                    #ffcc66 100%);
+            /* Text shadow */
+            /* Clip text to background gradient */
+            color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        nav {
+            background-color: #DCDCDCDC;
+            text-align: center;
+            height: 100px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 2%;
+            margin-top: 1.1%;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 20px;
+        }
+
+        nav ul li a:hover {
+            background-color: #d8d7d7;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #FFF0F5;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Estilos específicos */
+        h1 {
+            margin: 0;
+            font-family: 'vibes';
+        }
+
+        P {
+            margin: 0;
+            font-family: 'tas';
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        #ubicacion {
+            width: 100%;
+            height: 400px;
+        }
+
+        .galeria-container {
+            text-align: center;
+        }
+
+        .imagenes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 100%;
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .imagenes.mostrando {
+            opacity: 1;
+        }
+
+        .imagenes img {
+            max-width: 100%;
+            height: 500px;
+            width: 800px;
+            margin: 10px;
+        }
+
+        .flechas {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .flecha {
+            background-color: #DCDCDCDC;
+            color: #000000;
+            border: none;
+            padding: 8px 16px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .flecha:hover {
+            background-color: #555;
+        }
+
+        .flecha-izquierda {
+            margin-right: auto;
+        }
+
+        .flecha-derecha {
+            margin-left: auto;
+        }
+
+        .user-dropdown:hover .dropdown-list {
+            display: block;
+        }
+
+        .dropdown-list {
+            display: none;
+            position: absolute;
+            background-color: #DCDCDCDC;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 2px 4px #555;
+        }
+
+        .dropdown-list:hover {
+
+            background-color: #d8d7d7;
+        }
+
+        .dropdown-list li {
+            padding: 10px;
+        }
+
+        #contador {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 50px;
+
+        }
+        #indimapa{
+            margin-bottom: 50px;
+        }
+
+        .indimap {
+            margin-top: 10px;
+            width: 300px;
+            height: 5%;
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+            background-color: #31A952;
+            /* Color de fondo */
+            color: #000000;
+            /* Color del texto */
+            text-decoration: none;
+            /* Elimina la subraya predeterminada */
+            border-radius: 5px;
+            /* Bordes redondeados */
+        }
+
+        .indiwaz {
+            text-align: center;
+            margin-top: 10px;
+
+            width: 300px;
+            height: 5%;
+            display: inline-block;
+            padding: 10px;
+            background-color: #31C6F7;
+            /* Color de fondo */
+            color: #000000;
+            /* Color del texto */
+            text-decoration: none;
+            /* Elimina la subraya predeterminada */
+            border-radius: 5px;
+            /* Bordes redondeados */
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .indimap,
+            .indiwaz {
+                width: 80%;
+                /* Ajusta el ancho según tus necesidades para dispositivos móviles */
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* Estilos para el icono de mapa */
+        #waze::before {
+            content: "";
+            /* Eliminamos el contenido anterior */
+            display: inline-block;
+            width: 20px;
+            /* Ancho del icono */
+            height: 20px;
+            /* Altura del icono */
+            background: url('../icon/3771526.png') no-repeat;
+            /* Ruta del archivo PNG */
+            background-size: cover;
+            /* Ajustar el tamaño del fondo */
+            margin-right: 5px;
+            /* Espacio entre el icono y el texto */
+        }
+
+        #map::before {
+            content: "";
+            /* Eliminamos el contenido anterior */
+            display: inline-block;
+            width: 20px;
+            /* Ancho del icono */
+            height: 20px;
+            /* Altura del icono */
+            background: url('../icon/mao.png') no-repeat;
+            /* Ruta del archivo PNG */
+            background-size: cover;
+            /* Ajustar el tamaño del fondo */
+            margin-right: 5px;
+            /* Espacio entre el icono y el texto */
+        }
+
+        #music {
+            margin-top: 10px;
+            margin-left: 25%;
+            display: inline-block;
+            padding: 10px;
+            background-color: #DCDCDCDC;
+            /* Color de fondo */
+            color: #000000;
+            /* Color del texto */
+            text-decoration: none;
+            /* Elimina la subraya predeterminada */
+            border-radius: 5px;
+            /* Bordes redondeados */
+        }
+
+        #music::before {
+            content: "\1F57A";
+            /* Código Unicode del icono de mapa */
+            font-size: 20px;
+            margin-right: 5px;
+            /* Espacio entre el icono y el texto */
+        }
+
+        #music::after {
+            content: "\1F483";
+            /* Código Unicode del icono de mapa */
+            font-size: 20px;
+            margin-right: 5px;
+            /* Espacio entre el icono y el texto */
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        .volver-al-inicio {
+            position: fixed;
+            width: 30px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #DCDCDCDC;
+            color: #000000;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .volver-al-inicio:hover {
+            background-color: #939393dc;
+        }
+
+        .iconf {
+            font-size: 24px;
+
+        }
+
+        #indimapa {
+            text-align: center;
+            /* Alinea el contenido al centro horizontalmente */
+        }
+
+        #collage {
+            margin-left: 500px;
+            margin-right: 500px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 40px;
+        }
+
+        #collage img {
+            width: 250px;
+            height: 300px;
+            border-radius: 8px;
+        }
+
+        .lined-heading{
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        @media (max-device-width: 750px) {
+            header {
+                font-size: 24px;
+                /* Ajusta el tamaño del título para dispositivos móviles */
+                letter-spacing: 5px;
+                /* Ajusta el espaciado de las letras para dispositivos móviles */
+                background-size: 120% 100%;
+
+            }
+
+            #inicio {
+                margin-top: 100%;
+            }
+
+            #collage {
+                margin-left: 0px;
+                margin-right: 0px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                grid-gap: 10px;
+            }
+
+            #collage img {
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+            }
+
+            nav {
+                height: 240px;
+                width: 100%;
+                transform: scale(1);
+
+            }
+
+            nav ul li a {
+                font-size: 40px;
+            }
+            .fixed-nav {
+            position: fixed;
+            top: 0;
+            height: 230px;
+            width: 100%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #dcdcdc;
+            /* Agrega cualquier estilo adicional que desees cuando el nav está fijo */
+        }
+  
+        }
+        @media (max-device-width: 1280px) {
+
+            #collage img {
+                width: 200px;
+                height: 250px;
+                border-radius: 8px;
+            }
+            #collage {
+                margin-left: 100px;
+                margin-right: 100px;
+
+            }
+
+            
+        }
+
+
+        
+        

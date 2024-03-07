@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/stylegaleria.css"> <!-- Enlace al archivo CSS -->
+    <title>Galería de Fotos</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Información</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="videos.html">Videos</a></li> <!-- Agrega el enlace para Videos -->
+            <li><a href="regalos.html">Lista de Regalos</a></li>
+            <li><a href="#" onclick="irMusica()">Musica</a></li>
+            <li><a href="#" onclick="irMapa()">Ubicacion</a></li>
+            <li><a href="#" onclick="irAsis()">Asistencia</a></li>
+            <li id="user-link-li" class="user-dropdown">
+                <a id="user-link" href="user.html"><i class="fas fa-user"></i> Usuario</a>
+                <ul class="dropdown-list">
+                    <li><a id="login-link" href="ingreso.html">Ingresar</a></li>
+                    <li><a id="logout-link" href="https://bodaivancarolina.000webhostapp.com/files/cerrar_sesion.php"
+                            style="display: none;">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>Galería de Fotos</h1>
+    <div id="contenido-no-autenticado">
+        <!-- Mensaje estilizado para usuarios no autenticados -->
+        <div class="message">
+            <h1>Aquí podrás encontrar las fotos del matrimonio para que las puedas descargar o solo visualizarlas</h1>
+            <p>Debes haber iniciado sesión para ver el contenido.</p>
+            <a id="register" href="ingreso.html">Iniciar Sesión</a>
+            <a id="register" href="registro.html">Registrarse</a>
+        </div>
+    </div>
+
+    <div id="contenido-autenticado" class="galeria">
+        <!-- Contenido autenticado (galería de fotos y videos) se agregará aquí -->
+        <div id="contenido-imagenes">
+            <!-- Contenido de imágenes -->
+        </div>
+    </div>
+    <a href="#" class="volver-al-inicio" onclick="volverAlInicio()">
+        <span class="iconf">&#8593;</span>
+    </a>
+<div id="overlay">
+    <div id="loading-circle"></div>
+    <div id="loading-text">Descargando tus imágenes</div>
+</div>
+
+<style>
+    #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#loading-circle {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px; /* Mitad de la altura del círculo */
+    margin-left: -25px; /* Mitad del ancho del círculo */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#loading-text {
+    color: #fff; /* Color del texto, ajusta según tus preferencias */
+    font-size: 16px; /* Tamaño del texto, ajusta según tus preferencias */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+</style>
+<script src="./js/scriptgaleria.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Regalos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script> <!-- Asegúrate de ajustar la ruta correcta si es necesario -->
+    <link rel="stylesheet" href="css/stylegift.css"> <!-- Enlace al archivo CSS -->
+    <meta charset="UTF-8">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Información</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="videos.html">Videos</a></li> <!-- Agrega el enlace para Videos -->
+            <li><a href="regalos.html">Lista de Regalos</a></li>
+            <li id="user-link-li" class="user-dropdown">
+                <a id="user-link" href="user.html"><i class="fas fa-user"></i> Usuario</a>
+                <ul class="dropdown-list">
+                    <li><a id="login-link" href="ingreso.html">Ingresar</a></li>
+                    <li><a id="logout-link" href="https://bodaivancarolina.000webhostapp.com/files/cerrar_sesion.php" style="display: none;">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        $(document).ready(function() {
+            // Realizar una solicitud AJAX para verificar la sesión
+            $.getJSON('https://bodaivancarolina.000webhostapp.com/files/verificar_sesion.php', function(data) {
+                if (data.authenticated) {
+                    // Usuario autenticado, mostrar enlace de cerrar sesión y ocultar enlace de inicio de sesión
+                    $('#login-link').hide();
+                    $('#logout-link').show();
+        
+                    // Redireccionar al hacer clic en el enlace de usuario
+                    $('#user-link').click(function() {
+                        // Aquí puedes redirigir a la página de perfil del usuario
+                        window.location.href = 'perfil.html'; // Cambia a la página de perfil del usuario
+                    });
+                } else {
+                    // Usuario no autenticado, mostrar enlace de inicio de sesión y ocultar enlace de cerrar sesión
+                    $('#login-link').show();
+                    $('#logout-link').hide();
+        
+                    // Redireccionar al hacer clic en el enlace de usuario
+                    $('#user-link').click(function() {
+                        // Aquí puedes redirigir a la página de inicio de sesión
+                        window.location.href = 'ingreso.html'; // Redirige a la página de inicio de sesión
+                    });
+                }
+            });
+        });
+    </script>
+<div id="contenido-autenticado" class="container" style="display: none;">
+    <!-- Contenido visible para usuarios autenticados, como la lista de regalos -->
+    <div class="gift-list">
+        <h2>Lista de Regalos</h2>
+        <ul class="gifts"><li><div class="gift-info">
+            <h3>Florero de cristal</h3><p>florero de color rojo</p><p>Precio: $15000</p>
+            <button>Agregar al carrito</button></div></li><li>
+                <div class="gift-info"><h3>Vajilla de porcelana</h3><p>vajilla de francia</p><p>Precio: $45000</p>
+                    <button>Agregar al carrito</button></div></li><li><div class="gift-info"><h3>Juego de copas</h3>
+                        <p>juego de 24 copas de cristal</p><p>Precio: $20000</p><button>Agregar al carrito</button>
+                    </div></li><li><div class="gift-info"><h3>Licuadora de alta potencia</h3><p>licuadora con 90 velocidades</p>
+                        <p>Precio: $60000</p><button>Agregar al carrito</button></div></li></ul>
+    </div>
+    <div class="cart">
+        <h2>Carrito de Regalos</h2>
+        <ul class="cart-items" id="cart"></ul>
+            <button>Comprar</button>
+    </div>
+</div>
+
+<div id="contenido-no-autenticado" style="display: none;">
+    <!-- Mensaje estilizado para usuarios no autenticados -->
+
+    <div class="message">
+        <H1>Aqui podras ver los regalos del matrimonio</H1>
+        <p>Debes haber iniciado sesión para ver los regalos.</p>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        // Realizar una solicitud AJAX para verificar la sesión
+        $.getJSON('https://bodaivancarolina.000webhostapp.com/files/verificar_sesion.php', function(data) {
+            if (data.authenticated) {
+                // Usuario autenticado, mostrar contenido autenticado
+                $('#contenido-autenticado').show();
+                $('#nombre-usuario').text(data.username);  // Agregar esta línea si deseas mostrar el nombre de usuario
+            } else {
+                // Usuario no autenticado, mostrar contenido no autenticado
+                $('#contenido-no-autenticado').show();
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Boda de [NOMBRE NOVIO] y [NOMBRE NOVIA]</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Enlace al archivo CSS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h1 class="dorado" id="inicio" style="font-size: 150px;">Ivan - Carolina</h1>
+        <div class="dorado" id="contador" style="font-size: 30px;">Cargando contador...</div>
+        <p class="dorado" style="font-size: 20px;">17/02/2024 - San javier</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Información</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="videos.html">Videos</a></li> <!-- Agrega el enlace para Videos -->
+            <li><a href="regalos.html">Lista de Regalos</a></li>
+            <li><a onclick="irMusica()">Musica</a></li>
+            <li><a onclick="irMapa()">Ubicacion</a></li>
+            <li><a onclick="irAsis()">Asistencia</a></li>
+            <li id="user-link-li" class="user-dropdown">
+                <a id="user-link" href="user.html"><i class="fas fa-user"></i> Usuario</a>
+                <ul class="dropdown-list">
+                    <li><a id="login-link" href="ingreso.html">Ingresar</a></li>
+                    <li><a id="logout-link" href="https://bodaivancarolina.000webhostapp.com/files/cerrar_sesion.php"
+                            style="display: none;">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
+    <main>
+        <!-- Aquí puedes incluir la información de la boda -->
+        <section id="informacion">
+            <h1 class="lined-heading" style="font-size: 50px">Información de la Boda</h1>
+            <p>¡Celebremos el amor en el encantador entorno de San Javier, una comuna pintoresca ubicada en la hermosa
+                región del Maule en Chile! Te invitamos a ser parte de un día lleno de emociones, risas y momentos
+                inolvidables mientras Ivan y Carolina unen sus vidas en sagrado matrimonio.
+                La ceremonia tendrá lugar en Parroquia Nuestra Señora de la Merced, un rincón lleno de historia y belleza
+                natural. Con las majestuosas montañas como telón de fondo y la suave brisa que acaricia el lugar, el
+                ambiente será simplemente mágico. Los novios intercambiarán sus votos rodeados de familiares y amigos
+                que han sido testigos de su amor desde sus comienzos.
+                Después de la emotiva ceremonia, todos nos dirigiremos a la Horqueta, donde la
+                celebración continuará en grande. El lugar estará decorado con detalles que reflejan la personalidad de
+                los novios y su amor por la naturaleza y la tradición chilena. La música en vivo y el baile llenarán el
+                ambiente de alegría y felicidad mientras todos disfrutan de deliciosos platillos típicos de la región y
+                brindan con vinos locales de alta calidad.
+                Los momentos especiales no faltarán: desde el primer baile como esposos hasta los discursos emotivos de
+                amigos cercanos y familiares. Habrá un rincón de fotografías donde podrás capturar tus propios recuerdos
+                y dejar mensajes cariñosos para los recién casados.
+                No podemos esperar para compartir este día tan significativo con todos ustedes. Su presencia será el
+                regalo más grande que Ivan y Carolina puedan recibir, y juntos crearemos memorias que perdurarán
+                por siempre. ¡Únete a nosotros en esta celebración de amor y unidad en San Javier!</p>
+        </section>
+
+        <!-- Aquí puedes incluir una galería de fotos -->
+        <h1 class="lined-heading" style="font-size: 50px">Nuestra Relacion</h1>
+        <div id="collage">
+
+            <img src="imgNovios/33eb81af-ffa6-4047-9b2f-2efcc5304818.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/40ff75a2-9182-4b60-be0c-c1fa19d93ebf.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/55958a27-2602-4b41-aff2-67fd0969cb99.jpg">
+            <img src="imgNovios/57fc6ff8-038a-404f-bee9-3a0c93455ba5.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/6735eed8-9a42-4518-a5dd-890785a4141d.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/7174cacf-4ff3-473e-9c8f-9f6bab8b6bcd.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/73f9ba71-e68b-4d19-b479-c001cf49f078.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/94d8d8b8-216f-41cb-8db6-8f2092b8465b.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/a9847c6c-a8af-41c4-aa69-32dba31753cc.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/c2dc1be7-cb52-4d07-901c-79f45b7c4913.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/d97671c1-4088-4e9e-8d80-cc4573f59dec.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/db685f8e-63c5-44f9-9d65-135a5af96af3.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/f4f93ddc-a1aa-4cf8-9706-0f787218007e.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/f7297a47-a889-4811-b77a-b370a7e96ea2.jpg" alt="Descripción de la imagen 2">
+            <img src="imgNovios/ff59ebb2-c534-4351-a1a0-7e2e39984292.jpg" alt="Descripción de la imagen 2">
+
+        </div>
+        
+        <section>
+            <div id="ubicacionNom">
+                <h1 class="lined-heading" style="font-size: 50px">Lugar de celebracion </h1>
+                "La Horqueta" Centro de eventos <br>
+                Dirección: L-16 7, San Javier de Loncomilla, San Javier, Maule</h3>
+                <div id="ubicacion"></div>
+
+            </div>
+        </section>
+
+        <section id="indimapa">
+
+            <a class="indimap" id="map"
+                href="https://www.google.com/maps/place/La+Horqueta+Centro+de+eventos/@-35.6074223,-71.7394926,15.81z/data=!4m6!3m5!1s0x9665e8c03a95106b:0x6d11f1b38ca10339!8m2!3d-35.6062135!4d-71.7367207!16s%2Fg%2F11ckqjjh51?entry=ttu">Indicaciones
+                Google Maps</a>
+            <a class="indiwaz" id="waze"
+                href="https://www.waze.com/es-419/live-map/directions/la-horqueta-san-javier?utm_source=waze_website&utm_campaign=waze_website&utm_medium=website_menu&to=place.w.188941732.1889155175.17103074">Indicaciones
+                Waze</a>
+
+        </section>
+    </main>
+    <h1 class="lined-heading" style="font-size: 50px">Que No Falte La Musica...</h1>
+    <div style="display: flex; justify-content: space-between;">
+
+        <div style="width: 48%; margin-left: 20px;">
+            <p>
+                ¡Queridos amigos y seres queridos!
+                Estamos emocionados de compartir con ustedes la creación de nuestra playlist de bodas en Spotify,
+                y qué mejor manera de hacerla única que con sus sugerencias musicales especiales.
+                Queremos que esta playlist sea un reflejo de la alegría y la celebración que compartiremos en nuestro
+                día especial.
+                Así que los invitamos a colaborar y agregar esas canciones que tienen un lugar especial en sus corazones
+                o que les recuerdan momentos especiales.
+                ¡Hagamos juntos la banda sonora perfecta para nuestra boda!
+                El enlace para agregar sus canciones está justo aquí:<br><br><br><a id="music"
+                    href="https://open.spotify.com/playlist/0Lz07eOxKBEQm6IkGV6abl?si=9d2d74347b8b4e0f&pt=e87730c6e148baa7d1d495db91dac07d">
+                    Agregar Musica</a><br>
+            </p>
+        </div>
+
+        <div id="seccionMusica" style="width: 48%;">
+            <iframe style="border-radius: 12px"
+                src="https://open.spotify.com/embed/playlist/0Lz07eOxKBEQm6IkGV6abl?utm_source=generator&theme=0"
+                width="100%" height="352" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+    </div>
+    <footer>
+        <!-- Agrega cualquier información adicional que desees, como enlaces a redes sociales, datos de contacto, etc. -->
+        <p>Contacto: ivanganaingeniero@gmail.com - Teléfono: +569 94529411</p>
+    </footer>
+    <a href="#" class="volver-al-inicio" onclick="volverAlInicio()">
+        <span class="iconf">&#8593;</span>
+    </a>
+    
+  <script src="./js/scriptindex.js"></script>  
+</body>
+
+</html>

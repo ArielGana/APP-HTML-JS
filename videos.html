@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/stylegaleria.css"> <!-- Enlace al archivo CSS -->
+    <title>Galería de Fotos</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Información</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="videos.html">Videos</a></li> <!-- Agrega el enlace para Videos -->
+            <li><a href="regalos.html">Lista de Regalos</a></li>
+            <li><a href="#" onclick="irMusica()">Musica</a></li>
+            <li><a href="#" onclick="irMapa()">Ubicacion</a></li>
+            <li><a href="#" onclick="irAsis()">Asistencia</a></li>
+            <li id="user-link-li" class="user-dropdown">
+                <a id="user-link" href="user.html"><i class="fas fa-user"></i> Usuario</a>
+                <ul class="dropdown-list">
+                    <li><a id="login-link" href="ingreso.html">Ingresar</a></li>
+                    <li><a id="logout-link" href="https://bodaivancarolina.000webhostapp.com/files/cerrar_sesion.php"
+                            style="display: none;">Cerrar Sesión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>Galería de Videos</h1>
+
+    <div id="contenido-no-autenticado">
+        <!-- Mensaje estilizado para usuarios no autenticados -->
+        <div class="message">
+            <p>Debes haber iniciado sesión para ver el contenido.</p>
+            <a id="register" href="ingreso.html">Iniciar Sesion</a>
+            <a id="register" href="registro.html">Registrarse</a>
+            
+
+        </div>
+    </div>
+
+    <div id="contenido-autenticado" class="galeria">
+        <div id="contenido-videos" style="display: none;">
+            <!-- Contenido de videos -->
+            <h1>Aqui Podras Encontrar los videos del matrimonio para que las puedas descargar o solo visualizarlas</h1>
+            <button id="downloadimg" onclick="descargarFotos()">
+                <span class="icon">&#x1F4E5;</span> Descargar Videos
+            </button>
+        </div>
+    </div>
+    <a href="#" class="volver-al-inicio" onclick="volverAlInicio()">
+        <span class="iconf">&#8593;</span>
+    </a>
+<script src="./js/scriptvid.js"></script>
+</html>
